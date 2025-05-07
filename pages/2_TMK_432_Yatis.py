@@ -29,8 +29,8 @@ duygulanim = st.selectbox("Duygulanım", [
     "çökkünlük yönünde artmış", "taşkınlık yönünde artmış"
 ])
 cagrisimlar = st.multiselect("Çağrışım Özellikleri", [
-    "çağrışımlarının düzenli", "çağrışımlarının hızlanmış", "çağrışımlarının yavaşlamış",
-    "çağrışımlarının gevşemiş", "çağrışımlarının teğetsel", "çağrışımlarının çevresel",
+    "çağrışımlarının düzenli", "çağrışımlarında hızlanma", "çağrışımlarında yavaşlama",
+    "çağrışımlarında gevşeme", "çağrışımlarında teğetsellik", "çağrışımlarında çevresellik",
     "düşünce sürecinde enkoherans", "basınçlı konuşmasının", "fikir uçuşmalarının",
     "clang çağrışımlarının", "düşünce sürecinde perseverasyonların", "düşünce sürecinde blokların"
 ])
@@ -44,23 +44,38 @@ varsanilar = st.multiselect("Varsanılar", ["işitme", "görme", "taktil"])
 zeka = st.selectbox("Zeka (Soyutlama)", ["soyutlamasının bozuk olduğu", "soyutlamasının olağan olduğu"])
 
 # ↓ Ruhsal durum metni oluştur
+# ↓ Ruhsal durum metni oluştur (maksimum 2 seçim + gramer uyumlu)
 mse = f"İlgilinin {rapor_tarihi.strftime('%d/%m/%Y')} tarihindeki ruhsal durum muayenesinde duygudurumunun {duygudurum}, duygulanımının {duygulanim} olduğu"
 
-if cagrisimlar:
-    mse += ", " + ", ".join(cagrisimlar) + " olduğu"
-else:
-    mse += ", çağrışımlarında patoloji saptanmadığı"
+# En fazla 2 seçenekle sınırlama
+cagrisimlar_kisa = cagrisimlar[:2]
+sanrilar_kisa = sanrilar[:2]
+varsanilar_kisa = varsanilar[:2]
 
-if sanrilar and varsanilar:
-    mse += ", " + ", ".join(sanrilar) + " sanrılarının ve " + ", ".join(varsanilar) + " varsanılarının olduğu"
-elif sanrilar and not varsanilar:
-    mse += ", " + ", ".join(sanrilar) + " sanrılarının olduğu, algılamasının doğal olduğu"
-elif not sanrilar and varsanilar:
-    mse += ", " + ", ".join(varsanilar) + " varsanılarının olduğu, düşünce içeriğinin sanrısal içeriğe sahip olmadığı"
+# Düşünce süreci
+if cagrisimlar_kisa:
+    cagrisim_metin = ", ".join(cagrisimlar_kisa)
+    mse += f", düşünce sürecinde {cagrisim_metin} olduğu"
 else:
-    mse += ", sanrı ve varsanısının olmadığı"
+    mse += ", çağrışımlarının düzenli olduğu"
 
+# Sanrılar
+if sanrilar_kisa:
+    sanri_metin = ", ".join(sanrilar_kisa)
+    mse += f", {sanri_metin} sanrıları bulunduğu"
+else:
+    mse += ", sanrı boyutunda düşünce içeriği bulunmadığı"
+
+# Varsanılar
+if varsanilar_kisa:
+    varsanilar_metin = ", ".join(varsanilar_kisa)
+    mse += f", {varsanilar_metin} varsanısı bulunduğu"
+else:
+    mse += ", algı bozukluğu olmadığı"
+
+# Zeka (soyutlama)
 mse += f", {zeka} tespit edilmiştir."
+
 
 # ↓ Sonuç metni seçimi
 if karar == "Yatış gerekli (kendisi ve toplum için tehlike)":
