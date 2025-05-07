@@ -62,7 +62,7 @@ if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu (Mental Retardasyon)
 
-{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca değerlendirilerek rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Heyetinde değerlendirilmiştir.
+{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Heyetinde değerlendirilmiştir.
 İlgilinin {bilgi_alinan}, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {gelisim_metin}.
 """
 
