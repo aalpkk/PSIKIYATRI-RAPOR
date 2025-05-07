@@ -41,7 +41,7 @@ mse = st.text_area("Ruhsal Durum Muayenesi",
 
 # Test ve tanı
 derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "orta", "ağır"])
-kurul_tanisi = st.text_input("Kurul Tanısı (örn: Alzheimer tipi demans, majör nörobilişsel bozukluk vb.)")
+kurul_tanisi = st.text_input("Kurul Tanısı (örn: hafif bilişsel bozukluk, demans vb.)")
 
 # Rapor çıktısı
 if st.button("Raporu Oluştur"):
@@ -49,7 +49,7 @@ if st.button("Raporu Oluştur"):
 TMK 405 - Vesayet Raporu (Demans)
 
 {kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca değerlendirilerek rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
-İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklardan elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi} bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
+İlgilinin kendisinden, yakınından, incelenen tıbbi ve adli evraklardan elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi} bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
 """
 
     if tedavi_durumu == "Hiç kullanmamış":
