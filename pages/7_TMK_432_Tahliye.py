@@ -9,7 +9,7 @@ def format_date(dt):
 # Giriş alanları
 tc = st.text_input("T.C. Kimlik Numarası")
 ad_soyad = st.text_input("Adı ve Soyadı")
-muayene_yeri = st.selectbox("Muayene Yeri", ["Psikiyatri Polikliniği", "Acil Servis"])
+muayene_yeri = st.selectbox("Muayene Yeri", ["Psikiyatri Polikliniği", "Acil Servisi"])
 muayene_tarihi = st.date_input("Muayene Tarihi", value=date.today())
 tani = st.text_input("Koyulan Tanı")
 yatirildigi_tarih = st.date_input("Yatış Tarihi", value=date.today())
