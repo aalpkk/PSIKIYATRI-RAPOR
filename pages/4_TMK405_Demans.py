@@ -41,8 +41,7 @@ if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu
 
-{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
-İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
+{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir. İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
 """
 
     if tedavi_durumu == "Hiç kullanmamış":
