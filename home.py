@@ -27,6 +27,5 @@ for sayfa, baslik in raporlar.items():
     st.page_link(f"pages/{sayfa}.py", label=baslik, icon="➡️")
 
 st.markdown("---")
-st.info("Yukarıdaki başlıklardan birini seçerek ilgili rapor sayfasına 
-geçebilirsiniz.")
+st.info("Yukarıdaki başlıklardan birini seçerek ilgili rapor sayfasına geçebilirsiniz.")
 
