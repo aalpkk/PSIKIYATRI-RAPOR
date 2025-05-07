@@ -1,7 +1,7 @@
 import streamlit as st
 from datetime import datetime
 
-st.title("TMK 405 - Vesayet (Vasi Tespiti) Raporu")
+st.title("TMK 405 - Vasi Tespiti (Demans Nedeniyle) Raporu")
 
 def format_date(date_obj):
     return date_obj.strftime("%d/%m/%Y")
@@ -10,12 +10,13 @@ def format_date(date_obj):
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
+yonlendirme_nedeni = st.text_input("Üst Yazıda Belirtilen Yönlendirme Gerekçesi")
 tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı ve Soyadı")
 muayene_tarihi = st.date_input("Muayene Tarihi")
-
 sikayet_suresi = st.text_input("Bilişsel Şikayetlerin Süresi (örn: yaklaşık 3 yıldır)")
 
+# Tedavi bilgileri
 tedavi_durumu = st.radio("İlaç Tedavi Bilgisi", ["Hiç kullanmamış", "Geçmişte kullanmış", "Hâlihazırda kullanıyor"])
 if tedavi_durumu != "Hiç kullanmamış":
     tedavi_tanisi = st.text_input("Tedavi Tanısı")
@@ -23,6 +24,7 @@ if tedavi_durumu != "Hiç kullanmamış":
     ilac_dozu = st.text_input("İlaç Dozu")
     ilac_zamani = st.text_input("Kullanım Zamanı (örn: 2022-2023 arası)")
 
+# Önceki rapor bilgisi
 rapor_var = st.radio("Geçmişte düzenlenen resmi rapor var mı?", ["Hayır", "Evet"])
 if rapor_var == "Evet":
     rapor_kurum = st.text_input("Raporu Düzenleyen Kurum")
@@ -31,12 +33,25 @@ if rapor_var == "Evet":
     rapor_tani = st.text_input("Geçmiş Rapordaki Tanı")
     rapor_turu = st.selectbox("Raporun Türü", ["aslı", "aslı gibi örneği", "fotokopisi"])
 
-mse = st.text_area("Ruhsal Durum Muayenesi", "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
+# Ruhsal durum
+mse = st.text_area("Ruhsal Durum Muayenesi", 
+    "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, "
+    "konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, "
+    "çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
 
-derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "orta", "ağır"])
-kurul_tarihi = st.date_input("Kurul Tarihi")
-kurul_tanisi = st.text_input("Kurul Tanısı")
+# Zeka değerlendirme
+zeka_testi = st.selectbox("Zeka Testi", ["Wechsler Yetişkinler İçin Zeka Testi", "Kent EGY Testi"])
+iq_puani = st.text_input("IQ Puanı")
+kurul_tanisi = st.selectbox("Kurul Tanısı", [
+    "Sınırda mental kapasite",
+    "Hafif düzeyde mental retardasyon",
+    "Orta düzeyde mental retardasyon",
+    "Ağır düzeyde mental retardasyon",
+    "Çok ağır düzeyde mental retardasyon",
+    "Mental retardasyon"
+])
 
+# Rapor üretimi
 if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu (Demans)
@@ -46,7 +61,7 @@ TMK 405 - Vesayet Raporu (Demans)
 """
 
     if tedavi_durumu == "Hiç kullanmamış":
-        rapor += "İlgilinin incelenen tıbbi kayıtlarından geçmişte veya halihazırda bilişsel bozuklukla ilgili herhangi bir ilaç tedavisi kullanmadığı anlaşılmıştır.\n"
+        rapor += "İlgilinin incelenen tıbbi kayıtlarından geçmişte veya hâlihazırda bilişsel bozuklukla ilgili herhangi bir ilaç tedavisi kullanmadığı anlaşılmıştır.\n"
     else:
         rapor += f"İlgilinin {ilac_zamani} süresince {tedavi_tanisi} tanısı ile {ilac_adi} {ilac_dozu} kullandığı anlaşılmıştır.\n"
 
@@ -58,8 +73,5 @@ TMK 405 - Vesayet Raporu (Demans)
 
 Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan {zeka_testi} sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
 """
-
-    st.text_area("Oluşturulan Rapor", rapor.strip(), height=600)
-
 
     st.text_area("Oluşturulan Rapor", rapor.strip(), height=600)
