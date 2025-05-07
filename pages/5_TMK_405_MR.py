@@ -50,9 +50,12 @@ mse = st.text_area("Ruhsal Durum Muayenesi",
     "konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, "
     "çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
 
-derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "orta", "ağır"])
+
 kurul_tarihi = st.date_input("Kurul Tarihi")
 kurul_tanisi = st.text_input("Kurul Tanısı")
+zeka_testi = st.selectbox("Uygulanan Zeka Testi", ["Wechsler Yetişkinler İçin Zeka Testi", "Kent EGY Testi"])
+iq_puani = st.text_input("IQ Puanı")
+
 
 # Rapor çıktısı
 if st.button("Raporu Oluştur"):
