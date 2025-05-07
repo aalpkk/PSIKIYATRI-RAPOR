@@ -39,19 +39,11 @@ mse = st.text_area("Ruhsal Durum Muayenesi",
     "konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, "
     "çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
 
-# Zeka değerlendirme
-zeka_testi = st.selectbox("Zeka Testi", ["Wechsler Yetişkinler İçin Zeka Testi", "Kent EGY Testi"])
-iq_puani = st.text_input("IQ Puanı")
-kurul_tanisi = st.selectbox("Kurul Tanısı", [
-    "Sınırda mental kapasite",
-    "Hafif düzeyde mental retardasyon",
-    "Orta düzeyde mental retardasyon",
-    "Ağır düzeyde mental retardasyon",
-    "Çok ağır düzeyde mental retardasyon",
-    "Mental retardasyon"
-])
+# Test ve tanı
+derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "orta", "ağır"])
+kurul_tanisi = st.text_input("Kurul Tanısı (örn: Alzheimer tipi demans, majör nörobilişsel bozukluk vb.)")
 
-# Rapor üretimi
+# Rapor çıktısı
 if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu (Demans)
@@ -69,9 +61,9 @@ TMK 405 - Vesayet Raporu (Demans)
         rapor += f"İlgiliye {rapor_kurum} tarafından {format_date(rapor_tarihi)} tarih {rapor_no} rapor numarasıyla düzenlenen {rapor_tani} tanısı olduğunu bildirir sağlık kurulu raporunun {rapor_turu} görülmüştür.\n"
 
     rapor += f"""{mse}
-İlgiliye uygulanan {zeka_testi} sonucunda ilgilinin IQ puanı {iq_puani} olarak raporlanmıştır.
+İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir.
 
-Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan {zeka_testi} sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
+Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan modifiye mini mental test sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
 """
 
     st.text_area("Oluşturulan Rapor", rapor.strip(), height=600)
