@@ -10,14 +10,11 @@ def format_date(date_obj):
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
-yonlendirme_nedeni = st.text_input("Üst Yazıda Belirtilen Yönlendirme 
-Gerekçesi")
 tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı ve Soyadı")
 muayene_tarihi = st.date_input("Muayene Tarihi")
 
-sikayet_suresi = st.text_input("Bilişsel Şikayetlerin Süresi (örn: 
-yaklaşık 3 yıldır)")
+sikayet_suresi = st.text_input("Bilişsel Şikayetlerin Süresi (örn: yaklaşık 3 yıldır)")
 
 tedavi_durumu = st.radio("İlaç Tedavi Bilgisi", ["Hiç kullanmamış", 
 "Geçmişte kullanmış", "Hâlihazırda kullanıyor"])
@@ -38,12 +35,7 @@ if rapor_var == "Evet":
 "fotokopisi"])
 
 mse = st.text_area("Ruhsal Durum Muayenesi", 
-    "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi 
-ile uyumlu olduğu, "
-    "konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, 
-duygulanımının uygun olduğu, "
-    "çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, 
-sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
+    "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
 
 derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", 
 ["hafif", "orta", "ağır"])
@@ -55,7 +47,7 @@ if st.button("Raporu Oluştur"):
 TMK 405 - Vesayet Raporu
 
 {kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı 
-yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu 
+yazısı ile TMK'nın 405. maddesi uyarınca rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu 
 {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi 
 Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene 
 edilmiştir.
@@ -81,11 +73,7 @@ tanısı ile {ilac_adi} {ilac_dozu} kullandığı anlaşılmıştır.\n"
 görülmüştür.\n"
 
     rapor += f"""{mse}
-İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel 
-bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir.
-{ad_soyad} {format_date(kurul_tarihi)} tarihinde Hitit Üniversitesi Erol 
-Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Sağlık Kurulunda 
-değerlendirilmiştir.
+İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir. {ad_soyad} {format_date(kurul_tarihi)} tarihinde Hitit Üniversitesi Erol  Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Sağlık Kurulunda değerlendirilmiştir.
 
 Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan modifiye 
 mini mental test sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, 
