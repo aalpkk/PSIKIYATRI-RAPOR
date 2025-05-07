@@ -23,24 +23,11 @@ karar = st.radio("Rapor Sonucu", [
 
 # ↓ Ruhsal durum muayenesi bileşenleri
 st.markdown("### Ruhsal Durum Muayenesi")
-duygudurum = st.selectbox("Duygudurum", ["çökkün", "disforik", "anksiyöz", 
-"öforik", "coşkulu", "taşkın", "ötimik"])
-duygulanim = st.selectbox("Duygulanım", ["uygun", "uygunsuz", "düzleşmiş", 
-"küntleşmiş", "sığ", "çökkünlük yönünde artmış", "taşkınlık yönünde 
-artmış"])
-cagrisimlar = st.multiselect("Çağrışım Özellikleri", [
-    "çağrışımlarının düzenli", "çağrışımlarının hızlanmış", 
-"çağrışımlarının yavaşlamış",
-    "çağrışımlarının gevşemiş", "çağrışımlarının teğetsel", 
-"çağrışımlarının çevresel",
-    "düşünce sürecinde enkoherans", "basınçlı konuşmasının", "fikir 
-uçuşmalarının",
-    "clang çağrışımlarının", "düşünce sürecinde perseverasyonların", 
-"düşünce sürecinde blokların"
-])
+duygudurum = st.selectbox("Duygudurum", ["çökkün", "disforik", "anksiyöz", "öforik", "coşkulu", "taşkın", "ötimik"])
+duygulanim = st.selectbox("Duygulanım", ["uygun", "uygunsuz", "düzleşmiş", "küntleşmiş", "sığ", "çökkünlük yönünde artmış", "taşkınlık yönünde artmış"])
+cagrisimlar = st.multiselect("Çağrışım Özellikleri", ["çağrışımlarının düzenli", "çağrışımlarının hızlanmış", "çağrışımlarının yavaşlamış", "çağrışımlarının gevşemiş", "çağrışımlarının teğetsel", "çağrışımlarının çevresel", "düşünce sürecinde enkoherans", "basınçlı konuşmasının", "fikir uçuşmalarının", "clang çağrışımlarının", "düşünce sürecinde perseverasyonların", "düşünce sürecinde blokların"])
 sanrilar = st.multiselect("Sanrılar", [
-    "büyüklük", "kötülük görme", "alınma", "düşünce sokulması", "düşünce 
-okunması",
+    "büyüklük", "kötülük görme", "alınma", "düşünce sokulması", "düşünce okunması",
     "düşünce çalınması", "düşünce yayınlanması", "somatik edilginlik", 
 "duygudulanımın edilginliği",
     "dürtünün edilginliği", "iradenin edilginliği", "erotomanik", 
@@ -62,8 +49,7 @@ else:
     mse += ", çağrışımlarında patoloji saptanmadığı"
 
 if sanrilar and varsanilar:
-    mse += ", " + ", ".join(sanrilar) + " sanrılarının ve " + ", 
-".join(varsanilar) + " varsanılarının olduğu"
+    mse += ", " + ", ".join(sanrilar) + " sanrılarının ve " + ", ".join(varsanilar) + " varsanılarının olduğu"
 elif sanrilar and not varsanilar:
     mse += ", " + ", ".join(sanrilar) + " sanrılarının olduğu, 
 algılamasının doğal olduğu"
