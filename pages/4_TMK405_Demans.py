@@ -39,10 +39,10 @@ kurul_tanisi = st.text_input("Kurul Tanısı")
 
 if st.button("Raporu Oluştur"):
     rapor = f"""
-TMK 405 - Vesayet Raporu
+TMK 405 - Vesayet Raporu (Demans)
 
-{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
-İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
+{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca değerlendirilerek rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
+İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklardan elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi} bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
 """
 
     if tedavi_durumu == "Hiç kullanmamış":
@@ -54,8 +54,12 @@ TMK 405 - Vesayet Raporu
         rapor += f"İlgiliye {rapor_kurum} tarafından {format_date(rapor_tarihi)} tarih {rapor_no} rapor numarasıyla düzenlenen {rapor_tani} tanısı olduğunu bildirir sağlık kurulu raporunun {rapor_turu} görülmüştür.\n"
 
     rapor += f"""{mse}
-İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir.
-Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan modifiye mini mental test sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
+İlgiliye uygulanan {zeka_testi} sonucunda ilgilinin IQ puanı {iq_puani} olarak raporlanmıştır.
+
+Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan {zeka_testi} sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
 """
+
+    st.text_area("Oluşturulan Rapor", rapor.strip(), height=600)
+
 
     st.text_area("Oluşturulan Rapor", rapor.strip(), height=600)
