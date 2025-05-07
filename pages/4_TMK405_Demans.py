@@ -10,7 +10,6 @@ def format_date(date_obj):
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
-yonlendirme_nedeni = st.text_input("Üst Yazıda Belirtilen Yönlendirme Gerekçesi")
 tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı ve Soyadı")
 muayene_tarihi = st.date_input("Muayene Tarihi")
@@ -56,7 +55,6 @@ TMK 405 - Vesayet Raporu
 
     rapor += f"""{mse}
 İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir.
-{ad_soyad} {format_date(kurul_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Sağlık Kurulunda değerlendirilmiştir.
 
 Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan modifiye mini mental test sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
 """
