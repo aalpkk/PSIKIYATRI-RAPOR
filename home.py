@@ -19,7 +19,8 @@ raporlar = {
     "3_TMK_432_Taburculuk": "🏠 TMK 432 – Taburcu Raporu",
     "4_TMK405_Demans": "👵 TMK 405 – Vasi Raporu (Demans)",
     "5_TMK_405_MR": "🧒 TMK 405 – Vasi Raporu (Mental Retardasyon)",
-    "6_Fiili_Ehliyet": "📑 Noter – Hukuki Ehliyet Raporu"
+    "6_Fiili_Ehliyet": "📑 Noter – Hukuki Ehliyet Raporu",
+    "7_TMK_432_Tahliye": "📤 TMK 432 – Taburcu Raporu"
 }
 
 
