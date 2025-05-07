@@ -14,7 +14,7 @@ taburcu_tarihi = st.date_input("Taburcu Tarihi")
 tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı Soyadı")
 tani = st.text_input("Tanı")
-tedavi = st.text_area("Uygulanan Tedavi", placeholder="örn: antipsikotik ve bireysel psikoeğitim")
+tedavi = st.text_area("Uygulanan Tedavi", placeholder="örn: risperidon 2 mg/gün ve valproik asit 1000 mg/gün")
 
 # Rapor metni oluştur
 if st.button("Raporu Oluştur"):
