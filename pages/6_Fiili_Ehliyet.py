@@ -13,7 +13,7 @@ belge_turu = st.text_input("Noterde Düzenlenecek Belge Türü (örn: vekaletnam
 basvuru = st.radio("Başvuru Yolu", ["Noterden yönlendirme", "Kendi dilekçesiyle başvuru"])
 
 if basvuru == "Noterden yönlendirme":
-    noter_no = st.text_input("Noter Sıra Numarası (örn: 2.)")
+    noter_no = st.text_input("Hangi Noter (örn: 2.)")
     ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
     ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
     giris_paragraf = f"""T.C. Çorum {noter_no} Noterliğinin {ust_yazi_tarihi.strftime('%d/%m/%Y')} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {belge_turu} tanzim etmek için hukuki ehliyetinin bulunup bulunmadığı hususunda rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {muayene_tarihi.strftime('%d/%m/%Y')} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.\n"""
