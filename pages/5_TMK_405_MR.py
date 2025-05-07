@@ -10,7 +10,6 @@ def format_date(date_obj):
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
-yonlendirme_nedeni = st.text_input("Üst Yazıda Belirtilen Yönlendirme Gerekçesi")
 tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı ve Soyadı")
 muayene_tarihi = st.date_input("Muayene Tarihi")
@@ -52,7 +51,14 @@ mse = st.text_area("Ruhsal Durum Muayenesi",
 
 
 kurul_tarihi = st.date_input("Kurul Tarihi")
-kurul_tanisi = st.text_input("Kurul Tanısı")
+kurul_tanisi = st.selectbox("Kurul Tanısı", [
+    "Sınırda mental kapasite",
+    "Hafif düzeyde mental retardasyon",
+    "Orta düzeyde mental retardasyon",
+    "Ağır düzeyde mental retardasyon",
+    "Çok ağır düzeyde mental retardasyon",
+    "Mental retardasyon"
+])
 zeka_testi = st.selectbox("Uygulanan Zeka Testi", ["Wechsler Yetişkinler İçin Zeka Testi", "Kent EGY Testi"])
 iq_puani = st.text_input("IQ Puanı")
 
