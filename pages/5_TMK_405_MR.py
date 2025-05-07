@@ -6,6 +6,7 @@ st.title("TMK 405 - Zihinsel Yetersizlik (Mental Retardasyon) Nedeniyle Vesayet 
 def format_date(date_obj):
     return date_obj.strftime("%d/%m/%Y")
 
+# Üst yazı ve hasta bilgileri
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazının Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazının Sayısı")
@@ -14,9 +15,27 @@ tc = st.text_input("Hasta TC Kimlik No")
 ad_soyad = st.text_input("Adı ve Soyadı")
 muayene_tarihi = st.date_input("Muayene Tarihi")
 
+# Bilgi alınan kişi ve gelişimsel bilgiler (çoktan seçmeli)
 bilgi_alinan = st.text_input("Bilgi Alınan Kişiler (örn: annesi, kardeşi)")
-gelisim_bilgileri = st.text_area("Gelişimsel ve Eğitimsel Bilgiler", placeholder="örn: zor doğum, konuşma gecikmesi, özel eğitim, heceleyerek okuma, para hesabı yapamama vb.")
 
+gelisim_opsiyonlari = [
+    "zor doğumla dünyaya geldiği",
+    "gelişim basamaklarının yaşıtlarına göre geç ilerlediği",
+    "konuşamadığı",
+    "gramer ve kelime dağarcığı yönünden sınırlı bir dil yetisiyle konuşabildiği",
+    "sadece basit yönergeleri alabildiği",
+    "okuma-yazma öğrenemediği",
+    "heceleyerek okuyabildiği",
+    "kendi adı ve birkaç basit kelimeyi güçlükle yazabildiği",
+    "aritmetik işlemleri yapamadığı",
+    "yabancılar tarafından kolaylıkla kandırılabildiği",
+    "ev ihtiyaçlarını karşılama, sağlık ve ulaşım gibi alanlarda desteğe ihtiyaç duyduğu",
+    "gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu"
+]
+gelisim_secimleri = st.multiselect("Gelişimsel ve Eğitimsel Özellikler", options=gelisim_opsiyonlari)
+gelisim_metin = ", ".join(gelisim_secimleri)
+
+# Geçmiş rapor bilgisi
 rapor_var = st.radio("Geçmişte düzenlenen resmi rapor var mı?", ["Hayır", "Evet"])
 if rapor_var == "Evet":
     rapor_kurum = st.text_input("Raporu Düzenleyen Kurum")
@@ -25,6 +44,7 @@ if rapor_var == "Evet":
     rapor_tani = st.text_input("Geçmiş Rapordaki Tanı")
     rapor_turu = st.selectbox("Raporun Türü", ["aslı", "aslı gibi örneği", "fotokopisi"])
 
+# Ruhsal durum ve kurul
 mse = st.text_area("Ruhsal Durum Muayenesi", 
     "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, "
     "konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, "
@@ -34,12 +54,13 @@ derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "
 kurul_tarihi = st.date_input("Kurul Tarihi")
 kurul_tanisi = st.text_input("Kurul Tanısı")
 
+# Rapor çıktısı
 if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu (Mental Retardasyon)
 
 {kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
-İlgilinin {bilgi_alinan}, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {gelisim_bilgileri}
+İlgilinin {bilgi_alinan}, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {gelisim_metin}.
 """
 
     if rapor_var == "Evet":
