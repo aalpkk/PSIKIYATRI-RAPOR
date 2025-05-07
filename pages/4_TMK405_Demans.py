@@ -41,7 +41,7 @@ if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu
 
-{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
+{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile TMK'nın 405. maddesi uyarınca rapor düzenlenmesi için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
 İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
 """
 
@@ -55,7 +55,6 @@ TMK 405 - Vesayet Raporu
 
     rapor += f"""{mse}
 İlgiliye uygulanan modifiye mini mental test sonucunda ilgilinin genel bilişsel performansında {derece} derecede bozulma olduğu belirlenmiştir.
-
 Sonuç: Alınan öykü, incelenen evrak, yapılan muayene ve uygulanan modifiye mini mental test sonucunda {ad_soyad}’a {kurul_tanisi} tanısının konduğu, bu tanının ilgilinin TMK'nın 405. maddesi uyarınca vesayet altına alınmasını gerektirir nitelikte bir akıl zayıflığı olduğu, bu nedenle işlerini bizzat göremeyeceği, başkalarının bakım ve yardımına muhtaç olduğu, akıl sağlığının bağımsız ve sağlıklı karar vermeye yetkili olmadığı, hastalığının sürekli olduğu, hâlihazırdaki durumuyla başkalarına zarar vermemekte olup kapatılmasına gerek olmadığı ve mahkemece dinlenmesinde yarar olmadığı kanaatini bildirir sağlık kurulu raporudur.
 """
 
