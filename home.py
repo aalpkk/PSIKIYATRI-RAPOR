@@ -1,14 +1,14 @@
 import streamlit as st
 
-st.set_page_config(page_title="Adli Psikiyatri Raporları", 
+st.set_page_config(page_title="MenteLex: Psikiyatristler İçin Rapor Otomasyonu", 
 layout="centered")
 
-st.title("🧠 Adli ve Hukuki Psikiyatri Raporları")
+st.title("🧠 MenteLex: Psikiyatristler İçin Adli Rapor Düzenleme Uygulaması")
 
 st.markdown("""
-Bu uygulama, Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma 
-Hastanesi’nde düzenlenmesi gereken çeşitli adli ve idari raporların 
-otomatik oluşturulmasına yardımcı olmak amacıyla hazırlanmıştır.
+MenteLex, psikiyatristler tarafından düzenlenen resmi raporları 
+hızlı, hatasız ve yasal dile uygun şekilde oluşturmalarına yardımcı olan 
+bir destek aracıdır.
 """)
 
 st.markdown("## 📋 Rapor Türünü Seçin:")
