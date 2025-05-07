@@ -68,7 +68,8 @@ TMK 405 - Vesayet Raporu (Mental Retardasyon)
 
     if rapor_var == "Evet":
         rapor += f"İlgiliye {rapor_kurum} tarafından {format_date(rapor_tarihi)} tarih {rapor_no} rapor numarasıyla düzenlenen {rapor_tani} tanısı olduğunu bildirir sağlık kurulu raporunun {rapor_turu} görülmüştür.\n"
-        rapor += f"""{mse}
+        
+    rapor += f"""{mse}
 İlgiliye uygulanan {zeka_testi} sonucunda ilgilinin IQ puanı {iq_puani} olarak raporlanmıştır.
 {format_date(kurul_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Sağlık Kurulunda değerlendirilmiştir.
 
