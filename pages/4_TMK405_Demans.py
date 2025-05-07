@@ -31,7 +31,7 @@ if rapor_var == "Evet":
     rapor_tani = st.text_input("Geçmiş Rapordaki Tanı")
     rapor_turu = st.selectbox("Raporun Türü", ["aslı", "aslı gibi örneği", "fotokopisi"])
 
-mse = st.text_area("Ruhsal Durum Muayenesi", "İlgilinin ruhsal durum muayenesinde duygudurumunun ötimik, duygulanımının uygun olduğu, çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı, bellek ve yönelim bozukluğunun bulunduğu tespit edilmiştir.")
+mse = st.text_area("Ruhsal Durum Muayenesi", "İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, çağrışımlarının düzenli olduğu, düşünce içeriğinin fakir olduğu, sanrı ve algı bozukluğunun olmadığı tespit edilmiştir.")
 
 derece = st.selectbox("Modifiye Mini Mental Test Bozukluk Derecesi", ["hafif", "orta", "ağır"])
 kurul_tarihi = st.date_input("Kurul Tarihi")
@@ -41,7 +41,8 @@ if st.button("Raporu Oluştur"):
     rapor = f"""
 TMK 405 - Vesayet Raporu
 
-{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir. İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
+{kurum}ün {format_date(ust_yazi_tarihi)} tarih ve {ust_yazi_sayisi} sayılı yazısı ile {yonlendirme_nedeni} için yönlendirilen {tc} T.C. kimlik nolu {ad_soyad}, {format_date(muayene_tarihi)} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
+İlgilinin kendisinden, kız kardeşinden, incelenen tıbbi ve adli evraklarından elde edilen bilgilere göre {ad_soyad}’nın {sikayet_suresi}dır bilişsel şikâyetlerinin olduğu, bu bilişsel gerileme nedeniyle gündelik yaşam aktivitelerini yerine getirmek için başkalarının yardımına ihtiyaç duyduğu öğrenilmiştir.
 """
 
     if tedavi_durumu == "Hiç kullanmamış":
