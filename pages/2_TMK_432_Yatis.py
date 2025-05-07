@@ -29,7 +29,7 @@ duygulanim = st.selectbox("Duygulanım", [
     "çökkünlük yönünde artmış", "taşkınlık yönünde artmış"
 ])
 cagrisimlar = st.multiselect("Çağrışım Özellikleri", [
-    "çağrışımlarının düzenli", "çağrışımlarında hızlanma", "çağrışımlarında yavaşlama",
+    "çağrışımlarında hızlanma", "çağrışımlarında yavaşlama",
     "çağrışımlarında gevşeme", "çağrışımlarında teğetsellik", "çağrışımlarında çevresellik",
     "düşünce sürecinde enkoherans", "basınçlı konuşmasının", "fikir uçuşmalarının",
     "clang çağrışımlarının", "düşünce sürecinde perseverasyonların", "düşünce sürecinde blokların"
