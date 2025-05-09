@@ -10,8 +10,8 @@ st.set_page_config(
 st.title("🧠 MenteLex: Psikiyatristler İçin Adli Rapor Düzenleme Uygulaması")
 
 st.markdown("""
-MenteLex, psikiyatristler tarafından düzenlenen resmi raporları 
-hızlı, hatasız ve yasal dile uygun şekilde oluşturmalarına yardımcı olan 
+MenteLex, psikiyatristler tarafından düzenlenen resmi raporların 
+hızlı, hatasız ve yasal dile uygun şekilde oluşturmasına yardımcı olan 
 bir destek aracıdır.
 """)
 
