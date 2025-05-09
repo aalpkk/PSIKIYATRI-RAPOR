@@ -1,6 +1,13 @@
 import streamlit as st
 from datetime import datetime
 
+st.set_page_config(
+    page_title="MenteLex - TMK 405 Vasi Tespiti (Demans Nedeniyle)",
+    page_icon="🧠",  # Bu favicon olarak sekmede görünür
+    layout="centered"
+)
+
+
 st.title("TMK 405 - Vasi Tespiti (Demans Nedeniyle) Raporu")
 
 def format_date(date_obj):
