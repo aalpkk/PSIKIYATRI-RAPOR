@@ -1,7 +1,14 @@
 import streamlit as st
 from datetime import date
 
-st.title("TMK 432 - Akıl Hastalığı Nedeniyle Zorunlu Yatış Kararı")
+st.set_page_config(
+    page_title="MenteLex - TMK 432 Mahkemece Yönlendirilen Hastada Zorunlu Yatış Gerekliliği",
+    page_icon="🧠",  # Bu favicon olarak sekmede görünür
+    layout="centered"
+)
+
+
+st.title("TMK 432 - Mahkemece Yönlendirilen Hastada Zorunlu Yatış Gerekliliği")
 
 # Üst yazı bilgileri
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
