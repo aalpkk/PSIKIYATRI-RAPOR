@@ -1,5 +1,11 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="MenteLex - TCK 32",
+    page_icon="🧠",  # Bu favicon olarak sekmede görünür
+    layout="centered"
+)
+
 st.title("TCK 32 Rapor Oluşturucu")
 
 kurum = st.text_input("Üst Yazıyı Gönderen Kurum")
