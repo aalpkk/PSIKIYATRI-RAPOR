@@ -27,10 +27,10 @@ z_skoru = st.text_input("3MS Z Skoru")
 ehliyet_durumu = st.radio("Hukuki Ehliyeti", ["Var", "Yok"])
 
 if ehliyet_durumu == "Var":
-    sonuc_paragraf = f"""İlgilinin kendisi ve yakınından alınan anamnez, incelenen tıbbi kayıtları ve yapılan modifiye mini mental test sonucuna göre (3MS z skoru: {z_skoru}) {ad_soyad}'nın hâlihazırda ayırt etme gücünü ve hukuki ehliyetini etkileyecek nitelikte herhangi bir akıl hastalığı veya zayıflığı saptanmadığı, dolayısıyla kişinin rapor talebine esas {belge_turu} işlemini gerçekleştirmek için fiili ehliyetinin bulunduğu kanaati edinilmiştir."""
+    sonuc_paragraf = f"""İlgilinin kendisi ve yakınından alınan anamnez, incelenen tıbbi kayıtları ve yapılan modifiye mini mental test sonucuna göre (3MS z skoru: {z_skoru}) {ad_soyad}'nın hâlihazırda ayırt etme gücünü ve hukuki ehliyetini etkileyecek nitelikte herhangi bir akıl hastalığı veya zayıflığı saptanmadığı, dolayısıyla kişinin rapor talebine esas {belge_turu} tanzim etme işlemini gerçekleştirmek için fiili ehliyetinin bulunduğu kanaati edinilmiştir."""
 else:
     tanı = st.selectbox("Tanı", ["demans", "hafif bilişsel bozukluk"])
-    sonuc_paragraf = f"""İlgilinin kendisi ve yakınından alınan anamnez, incelenen tıbbi kayıtları ve yapılan modifiye mini mental test sonucuna göre (3MS z skoru: {z_skoru}) {ad_soyad}’ya hâlihazırda ayırt etme gücünü etkileyecek nitelikte {tanı} tanısının konulduğu, bu nedenle ilgilinin {belge_turu} işlemini gerçekleştirmek için fiili ehliyetinin bulunmadığı kanaati edinilmiştir."""
+    sonuc_paragraf = f"""İlgilinin kendisi ve yakınından alınan anamnez, incelenen tıbbi kayıtları ve yapılan modifiye mini mental test sonucuna göre (3MS z skoru: {z_skoru}) {ad_soyad}’ya hâlihazırda ayırt etme gücünü etkileyecek nitelikte {tanı} tanısının konulduğu, bu nedenle ilgilinin {belge_turu} tanzim etme işlemini gerçekleştirmek için fiili ehliyetinin bulunmadığı kanaati edinilmiştir."""
 
 # Sonuç gösterimi
 rapor = giris_paragraf + "\n" + sonuc_paragraf
