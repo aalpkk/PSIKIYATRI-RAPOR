@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("TCK 32 Rapor Oluşturucu")
 
-kurum = st.text_input("Kurumu")
+kurum = st.text_input("Yazıyı Gönderen Kurum")
 ust_yazi_tarihi = st.date_input("Üst Yazı Tarihi")
 ust_yazi_sayisi = st.text_input("Üst Yazı Sayısı")
 suc_tarihi = st.date_input("Suç Tarihi")
