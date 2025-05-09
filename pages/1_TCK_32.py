@@ -22,7 +22,7 @@ if st.button("Raporu Oluştur"):
     base = f"""
 TCK 32
 
-{kurum}un {ust_yazi_tarihi.strftime('%d/%m/%Y')} tarih ve {ust_yazi_sayisi} sayılı yazısı ile suç tarihi olan {suc_tarihi.strftime('%d/%m/%Y')} tarihi itibariyle TCK'nın 32. maddesi kapsamında değerlendirilip değerlendirilemeyeceği hususunda rapor düzenlenmesi için yönlendirilen {tc_kimlik_no} T.C. kimlik nolu {ad_soyad}, {muayene_tarihi} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
+{kurum}un {ust_yazi_tarihi.strftime('%d/%m/%Y')} tarih ve {ust_yazi_sayisi} sayılı yazısı ile suç tarihi olan {suc_tarihi.strftime('%d/%m/%Y')} tarihi itibariyle TCK'nın 32. maddesi kapsamında değerlendirilip değerlendirilemeyeceği hususunda rapor düzenlenmesi için yönlendirilen {tc_kimlik_no} T.C. kimlik nolu {ad_soyad}, {muayene_tarihi.strftime('%d/%m/%Y')} tarihinde Hitit Üniversitesi Erol Olçok Eğitim ve Araştırma Hastanesi Psikiyatri Polikliniğinde muayene edilmiştir.
 İlgilinin kendisinden ve ilgili tıbbi/adli evraktan edinilen bilgilere göre {anamnez} anlaşılmıştır.
 İlgilinin ruhsal durum muayenesinde giyiminin sosyoekonomik düzeyi ile uyumlu olduğu, konuşma miktarının ve hızının normal olduğu, duygudurumunun ötimik, duygulanımının uygun olduğu, çağrışımlarının düzenli olduğu, sanrı ve algı bozukluğunun olmadığı, soyutlama ve muhakeme yetilerinin normal olduğu tespit edilmiştir.
 """
