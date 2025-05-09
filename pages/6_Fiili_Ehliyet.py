@@ -1,6 +1,13 @@
 import streamlit as st
 from datetime import date
 
+st.set_page_config(
+    page_title="MenteLex - Fiili Ehliyet",
+    page_icon="🧠",  # Bu favicon olarak sekmede görünür
+    layout="centered"
+)
+
+
 st.title("Hukuki Ehliyet (Akli Meleke) Raporu")
 
 # Ortak alanlar
