@@ -1,7 +1,11 @@
 import streamlit as st
 
-st.set_page_config(page_title="MenteLex: Psikiyatristler İçin Rapor Otomasyonu", 
-layout="centered")
+st.set_page_config(
+    page_title="MenteLex: Psikiyatristler İçin Rapor Otomasyonu",
+    page_icon="🧠",  # Bu favicon olarak sekmede görünür
+    layout="centered"
+)
+
 
 st.title("🧠 MenteLex: Psikiyatristler İçin Adli Rapor Düzenleme Uygulaması")
 
